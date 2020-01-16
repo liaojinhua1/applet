@@ -1,0 +1,53 @@
+<!--index.wxml-->
+<view class="index">
+  <!-- <my-search inner-text="Some text">
+    <!-- <view>用来替代slot的</view> 
+    </my-search> -->
+  <!-- 搜索 -->
+  <view class="search">
+    <SearchInput/>
+  </view>
+  <!-- 轮播图 -->
+  <swiper class="slideshow" indicator-dots="{{true}}" autoplay="{{true}}">
+    <swiper-item wx:for="{{imageArr}}" wx:key="goods_id">
+      <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}">
+        <image src="{{item.image_src}}" mode="aspectFit" class="slideshow-image"></image>
+      </navigator>
+    </swiper-item>
+  </swiper>
+  <!-- 导航菜单 -->
+  <view class="nav">
+    <view class="nav-item" wx:for="{{navData}}" wx:key="index">
+      <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}">
+        <image class="nav-image" src="{{item.image_src}}"></image>
+      </navigator>
+    </view>
+  </view>
+  <!-- 楼层 -->
+  <view class="floor">
+    <view class="floor-item" wx:for="{{floorData}}" wx:key="index">
+      <view class="floor-title">
+        <image src="{{item.floor_title.image_src}}" class="title-image"></image>
+      </view>
+      <view class="floor-content">
+        <view class="content-left">
+          <image src="{{item.product_list[0].image_src}}" class="content-left-image"></image>
+        </view>
+        <view class="content-right">
+          <navigator url="{{item.product_list[1].navigator_url}}" open-type="{{item.product_list[1].open_type}}">
+            <image src="{{item.product_list[1].image_src}}" class="content-right-image"></image>
+          </navigator>
+          <navigator url="{{item.product_list[2].navigator_url}}" open-type="{{item.product_list[2].open_type}}">
+            <image src="{{item.product_list[2].image_src}}" class="content-right-image"></image>
+          </navigator>
+          <navigator url="{{item.product_list[3].navigator_url}}" open-type="{{item.product_list[3].open_type}}">
+            <image src="{{item.product_list[3].image_src}}" class="content-right-image"></image>
+          </navigator>
+          <navigator url="{{item.product_list[4].navigator_url}}" open-type="{{item.product_list[4].open_type}}">
+            <image src="{{item.product_list[4].image_src}}" class="content-right-image"></image>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

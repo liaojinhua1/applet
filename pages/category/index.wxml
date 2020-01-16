@@ -1,0 +1,30 @@
+<!--pages/category/index.wxml-->
+<view class="category">
+  <view class="search">
+    <SearchInput/>
+  </view>
+  <view class="category-mian">
+    <view class="category-nav" wx:for="{{categoryData}}" wx:key="cat_id">
+      <view class="nav-item">
+        <navigator url="/page/navigate/navigate?title=navigate" hover-class="navigator-hover">{{item.cat_name}}</navigator>
+      </view>
+    </view>
+    <view class="category-list">
+      niarong
+    </view>
+  </view>
+
+</view>
+
+<view class="page-section">
+  <view class="page-section-title">
+    <text>Vertical Scroll\n纵向滚动</text>
+  </view>
+  <view class="page-section-spacing">
+    <scroll-view scroll-y="true" style="height: 300rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+      <view id="demo1" class="scroll-view-item demo-text-1"></view>
+      <view id="demo2" class="scroll-view-item demo-text-2"></view>
+      <view id="demo3" class="scroll-view-item demo-text-3"></view>
+    </scroll-view>
+  </view>
+</view>

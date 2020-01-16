@@ -1,0 +1,4 @@
+<!--components/SearchInput/SearchInput.wxml-->
+  <view class="searchInput">
+    <view class="searchContent">搜索</view>
+  </view>

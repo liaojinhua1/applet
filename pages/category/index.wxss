@@ -1,0 +1,29 @@
+/* pages/category/index.wxss */
+
+
+/* 导航菜单 */
+.category{
+
+}
+/* 主体 */
+.category-mian{
+  display: flex;
+  justify-content: space-between;
+}
+/* 导航 */
+.category-nav{
+  width: 182rpx;
+  background-color: #F3F3F3;
+  display: flex;
+  flex-direction:column ;
+ justify-content: flex-start;  
+}
+.nav-item{
+   /* width: 182rpx; */
+  /* display: block; */
+  /* flex: 1; */
+}
+/* 右侧 */
+.category-list{
+  width: 568rpx;
+}

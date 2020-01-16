@@ -1,0 +1,78 @@
+/**index.wxss**/
+
+
+
+/* 轮播图 */
+
+.slideshow {
+  height: 340rpx;
+}
+
+.slideshow-image {
+  height: 340rpx;
+  width: 100%;
+}
+
+/* 导航 */
+
+.nav {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 10rpx 0;
+}
+
+.nav-item {
+  flex: 1;
+}
+
+.nav-image {
+  height: 140rpx;
+  width: 128rpx;
+}
+
+/* 楼层 */
+
+.floor-title {
+  width: 100%;
+  height: 59rpx;
+}
+
+.title-image {
+  width: 100%;
+  height: 59rpx;
+}
+
+.floor-content {
+  display: flex;
+  justify-content: space-around;
+  /* align-content: space-around; */
+}
+
+.content-left {
+  /* padding: 0 10rpx; */
+  width: 232rpx;
+  height: 386rpx;
+}
+
+.content-left-image {
+  width: 232rpx;
+  height: 386rpx;
+}
+
+.content-right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-between;
+}
+
+.content-right navigator {
+  width: 233rpx;
+  height: 188rpx;
+}
+
+.content-right-image {
+  /* width: 100%;
+height: 100%; */
+}
