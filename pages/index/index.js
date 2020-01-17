@@ -8,12 +8,7 @@ Page({
     navData: [], // 导航列表
     floorData: [], //楼层数据
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
+ 
   onLoad: function() {
     // 轮播图
     wx.request({
@@ -53,7 +48,7 @@ Page({
           console.log(this.data.floorData)
         }),
         fail: (err => {
-
+          console.log(err)
         })
         // complete: function(res) {},
       })

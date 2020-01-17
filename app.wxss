@@ -1,7 +1,7 @@
 /**app.wxss**/
  
 /* 初始化整体样式 */
-page,view,text,image,navigator{
+page,view,text,image,navigator,swiper,swiper-item{
   margin: 0rpx;
   padding: 0rpx;
   box-sizing: border-box;

@@ -1,6 +1,6 @@
 /* components/SearchInput/SearchInput.wxss */
 .searchInput {
-  width: 100%;
+  width:750rpx;
   height: 100rpx;
   background-color: #efb336;
   display: flex;

@@ -17,37 +17,29 @@
   </swiper>
   <!-- 导航菜单 -->
   <view class="nav">
-    <view class="nav-item" wx:for="{{navData}}" wx:key="index">
-      <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}">
-        <image class="nav-image" src="{{item.image_src}}"></image>
+    <block wx:for="{{navData}}" wx:key="index">
+      <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}" class="nav-item" wx:key="index">
+        <image class="nav-image" mode="widthFix" src="{{item.image_src}}"></image>
       </navigator>
-    </view>
+    </block>
   </view>
   <!-- 楼层 -->
-  <view class="floor">
-    <view class="floor-item" wx:for="{{floorData}}" wx:key="index">
-      <view class="floor-title">
-        <image src="{{item.floor_title.image_src}}" class="title-image"></image>
-      </view>
-      <view class="floor-content">
-        <view class="content-left">
-          <image src="{{item.product_list[0].image_src}}" class="content-left-image"></image>
+  <view class="index-floor">
+    <view class="floor-group">
+      <block wx:for="{{floorData}}" wx:key="index">
+        <!-- 楼层头部 -->
+        <view class="floor-title">
+          <image src="{{item.floor_title.image_src}}" mode="widthFix"></image>
         </view>
-        <view class="content-right">
-          <navigator url="{{item.product_list[1].navigator_url}}" open-type="{{item.product_list[1].open_type}}">
-            <image src="{{item.product_list[1].image_src}}" class="content-right-image"></image>
-          </navigator>
-          <navigator url="{{item.product_list[2].navigator_url}}" open-type="{{item.product_list[2].open_type}}">
-            <image src="{{item.product_list[2].image_src}}" class="content-right-image"></image>
-          </navigator>
-          <navigator url="{{item.product_list[3].navigator_url}}" open-type="{{item.product_list[3].open_type}}">
-            <image src="{{item.product_list[3].image_src}}" class="content-right-image"></image>
-          </navigator>
-          <navigator url="{{item.product_list[4].navigator_url}}" open-type="{{item.product_list[4].open_type}}">
-            <image src="{{item.product_list[4].image_src}}" class="content-right-image"></image>
-          </navigator>
+        <!-- 楼层列表 -->
+        <view class="product-list">
+          <block wx:for="{{item.product_list}}" wx:for-item="v" wx:for-index="i" wx:key="i">
+            <navigator url="{{v.navigator_url}}" open-type="{{v.open_type}}">
+              <image src="{{v.image_src}}" mode="{{ i === 0 ?'widthFix':'scaleToFill'}}"></image>
+            </navigator>
+          </block>
         </view>
-      </view>
+      </block>
     </view>
   </view>
 </view>

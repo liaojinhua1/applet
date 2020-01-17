@@ -1,29 +1,50 @@
 /* pages/category/index.wxss */
 
+/* 搜索框 */
+
+.search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* top: 300rpx; *//* left: 50%; */
+}
 
 /* 导航菜单 */
-.category{
 
+.category {
 }
-/* 主体 */
-.category-mian{
+
+/* 主体布局 */
+
+.category-mian {
+  position: fixed;
+  top: 100rpx;
+  left: 0;
+  height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  padding-bottom:100rpx;
 }
-/* 导航 */
-.category-nav{
+
+/* 左侧导航 */
+
+.category-nav {
   width: 182rpx;
-  background-color: #F3F3F3;
-  display: flex;
-  flex-direction:column ;
- justify-content: flex-start;  
+ }
+
+.category-nav scroll-view {
+  background-color: #f3f3f3; 
 }
-.nav-item{
-   /* width: 182rpx; */
-  /* display: block; */
-  /* flex: 1; */
+
+.scroll-view-item {
+  width: 100%;
+  height: 77rpx;
+  line-height: 77rpx;
+  text-align: center;
 }
-/* 右侧 */
-.category-list{
-  width: 568rpx;
+
+/* 右侧列表 */
+
+.category-list {
+  /* width: 568rpx; */
 }

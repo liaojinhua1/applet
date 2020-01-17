@@ -5,30 +5,54 @@ Page({
    * 页面的初始数据
    */
   data: {
-    categoryData: [] //导航数据
+    categoryData: [], //导航数据
+    categoryList: [], //右侧的详细列表
+    index: 0 //当前点击的左侧导航栏的索引
   },
 
+  // 点击了菜单导航
+  clickNav: function(e) {
+    // 设置循环列表  
+    this.setData({
+      index: e.currentTarget.dataset.index,
+      categoryList: this.data.categoryData[this.data.index].children
+    });
+    console.log(this.data.index)
+    console.log(this.data.categoryList)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    // 发送请求，获取分类
-    wx.request({
-      url: 'https://api.zbztb.cn/api/public/v1/categories',
-      method: 'GET',
-      success: (res => {
-        this.setData({
-          categoryData: res.data.message
-        })
-        console.log(res)
-      }),
-      fail: (err => {
-        console.log(err)
-      })
-      // complete: function(res) {},
-    })
+    // 调用获取列表数据方法
+    this.getCategoryData()
   },
+  // 发送请求，获取导航列表数据
+  getCategoryData() {
+    wx.showLoading({
+        title: '数据正在加载',
+      }),
+      // 发送请求，获取分类
+      wx.request({
+        url: 'https://api.zbztb.cn/api/public/v1/categories',
+        method: 'GET',
+        success: (res => {
+          this.setData({
+            categoryData: res.data.message,
+          });
+          this.setData({
+            categoryList: this.data.categoryData[0].children
+          })
+          console.log(res);
+          wx.hideLoading()
+        }),
+        fail: (err => {
+          console.log(err)
+        })
 
+        // complete: function(res) {},
+      })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
