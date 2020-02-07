@@ -7,18 +7,21 @@ Page({
   data: {
     categoryData: [], //导航数据
     categoryList: [], //右侧的详细列表
-    index: 0 //当前点击的左侧导航栏的索引
+    currentIndex: 0, //当前点击的左侧导航栏的索引
+    currentId:'' //右侧导航，当前点击的导航id
   },
 
   // 点击了菜单导航
-  clickNav: function(e) {
+  select: function(e) {
+    // console.log(e)
     // 设置循环列表  
     this.setData({
-      index: e.currentTarget.dataset.index,
-      categoryList: this.data.categoryData[this.data.index].children
+      currentIndex: e.currentTarget.dataset.index,
+      categoryList: this.data.categoryData[e.currentTarget.dataset.index].children      
     });
-    console.log(this.data.index)
+    console.log(this.data.currentIndex)
     console.log(this.data.categoryList)
+    // console.log(this.data.currentId)
   },
   /**
    * 生命周期函数--监听页面加载

@@ -3,19 +3,21 @@
   <!-- <my-search inner-text="Some text">
     <!-- <view>用来替代slot的</view> 
     </my-search> -->
-  <!-- 搜索 -->
+  <!-- 首页搜索框开始 -->
   <view class="search">
     <SearchInput/>
+    <!-- 首页搜索框结束 -->
   </view>
-  <!-- 轮播图 -->
+  <!-- 首页轮播图开始 -->
   <swiper class="slideshow" indicator-dots="{{true}}" autoplay="{{true}}">
-    <swiper-item wx:for="{{imageArr}}" wx:key="goods_id">
+    <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
       <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}">
-        <image src="{{item.image_src}}" mode="aspectFit" class="slideshow-image"></image>
+        <image src="{{item.image_src}}" mode="widthFix" class="slideshow-image"></image>
       </navigator>
     </swiper-item>
   </swiper>
-  <!-- 导航菜单 -->
+  <!-- 首页轮播图结束 -->
+  <!-- 导航菜单开始 -->
   <view class="nav">
     <block wx:for="{{navData}}" wx:key="index">
       <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}" class="nav-item" wx:key="index">
@@ -23,7 +25,9 @@
       </navigator>
     </block>
   </view>
-  <!-- 楼层 -->
+  <!-- 导航菜单结束 -->
+
+  <!-- 楼层开始 -->
   <view class="index-floor">
     <view class="floor-group">
       <block wx:for="{{floorData}}" wx:key="index">
@@ -42,4 +46,6 @@
       </block>
     </view>
   </view>
+  <!-- 楼层结束 -->
+
 </view>

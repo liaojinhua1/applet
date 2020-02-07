@@ -37,14 +37,25 @@
 }
 
 .scroll-view-item {
+  font-size: 28rpx;
   width: 100%;
   height: 77rpx;
   line-height: 77rpx;
   text-align: center;
 }
-
-/* 右侧列表 */
+.isSelect{
+  color: var(--themeColor);
+  border-left: 4rpx solid var(--themeColor);
+  /* color: #ffffff; */
+}
+/* 左侧列表 */
 
 .category-list {
   /* width: 568rpx; */
+}
+.category-list .category-list-title span{
+  font-size: 26rpx;
+}
+.category-list .category-list-title i{
+
 }

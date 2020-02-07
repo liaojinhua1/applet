@@ -1,2 +1,18 @@
 <!--pages/search/index.wxml-->
-<text>pages/search/index.wxml</text>
+<!-- 输入搜索框 -->
+<view class="search_center">
+  <!-- 左边输入内容开始 -->
+  <view class="search_input">
+    <icon type="search"></icon>
+    <input placeholder="输入商品名" value="{{inputVal}}" bindinput="handleInputChange"></input>
+  </view>
+  <!-- 左边输入内容结束 -->
+  <!-- 右边搜索按钮开始 -->
+  <view class="search_btn" bindtap="handleSearch">
+    搜索
+  </view>
+  <!-- 右边搜索按钮结束 -->
+  <!-- 搜索列表开始 -->
+  <GoodsList  goods_list="{{goods_list}}"/>  
+  <!-- 搜索列表结束 -->
+</view>

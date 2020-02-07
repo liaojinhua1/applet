@@ -1,1 +1,26 @@
-/* pages/search/index.wxss */
+.search_center {
+  margin: 15rpx 0;
+}
+.search_center .search_input {
+  float: left;
+  display: flex;
+  align-items: center;
+  width: 599rpx;
+  height: 61rpx;
+  margin-left: 18rpx;
+  background-color: #e7e7e7;
+  border-radius: 27rpx;
+}
+.search_center .search_btn {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 101rpx;
+  height: 61rpx;
+  margin-left: 15rpx;
+  border-radius: 8rpx;
+  background-color: var(--themeColor);
+  color: #ffffff;
+  font-size: 25rpx;
+}

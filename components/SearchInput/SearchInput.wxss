@@ -2,17 +2,19 @@
 .searchInput {
   width:750rpx;
   height: 100rpx;
-  background-color: #efb336;
+  background-color: var(--themeColor);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
 }
 
-.searchContent {
+.searchInput navigator {
+  display: flex;
   width: 700rpx;
   height: 80rpx;
   background-color: #fff;
-  display: flex;
+  color: #767676; 
+  border-radius: 5rpx;
   justify-content: center;
   align-items: center;
 }

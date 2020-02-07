@@ -6,19 +6,23 @@
   <view class="category-mian">
     <view class="category-nav">
       <scroll-view scroll-y='true' style="height:100%" scroll-with-animation="true" scroll-into-view="{{toView}}">
-        <block wx:for="{{categoryData}}" wx:key="cat_id">
-          <view id="{{item.cat_id}}" class="scroll-view-item" bindtap="clickNav" data-index="{{index}}">
+        <block wx:for="{{categoryData}}" wx:key="index">
+          <view id="{{item.cat_id}}" class="scroll-view-item {{index === currentIndex ?'isSelect':''}}" data-index="{{index}}" bindtap="select">
             {{item.cat_name}}
           </view>
         </block>
       </scroll-view>
     </view>
-    <view class="category-list" >
-    <scroll-view scroll-y='true' style="height:100%" scroll-with-animation="true" scroll-into-view="{{toView}}">
-    <block wx:for="{{categoryList}}" wx:key="cat_id">
-     <view>{{item.cat_name}}</view>
-    </block>
-    </scroll-view>
+    <view class="category-list">
+      <scroll-view scroll-y='true' style="height:100%" scroll-with-animation="true" scroll-into-view="{{toView}}">
+        <block wx:for="{{categoryList}}" wx:key="index">
+          <view class="category-list-title">
+            <i></i>
+            <span>{{item.cat_name}}</span>
+            <i></i>
+          </view>
+        </block>
+      </scroll-view>
     </view>
   </view>
 

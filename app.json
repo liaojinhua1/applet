@@ -15,7 +15,7 @@
     "pages/pay/index"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarBackgroundColor": "#efb336",
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "WeChart",
     "backgroundColor": "#eeeeee",
@@ -23,8 +23,8 @@
     "enablePullDownRefresh": false
   },
   "tabBar": {
-    "color": "#515151",
-    "selectedColor": "#FFD700",
+    "color": "#8C8D8D",
+    "selectedColor": "#efb336",
     "list": [
       {
         "pagePath": "pages/index/index",
