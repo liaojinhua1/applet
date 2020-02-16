@@ -1,61 +1,53 @@
-/* pages/category/index.wxss */
-
-/* 搜索框 */
-
-.search {
-  position: fixed;
-  top: 0;
-  left: 0;
-  /* top: 300rpx; *//* left: 50%; */
+.category .category_main {
+  overflow: hidden;
+  height: calc(100vh - 100rpx);
 }
-
-/* 导航菜单 */
-
-.category {
-}
-
-/* 主体布局 */
-
-.category-mian {
-  position: fixed;
-  top: 100rpx;
-  left: 0;
+.category .category_main .category_nav {
   height: 100%;
-  display: flex;
-  justify-content: space-around;
-  padding-bottom:100rpx;
-}
-
-/* 左侧导航 */
-
-.category-nav {
   width: 182rpx;
- }
-
-.category-nav scroll-view {
-  background-color: #f3f3f3; 
+  float: left;
+  background-color: #f3f3f3;
 }
-
-.scroll-view-item {
+.category .category_main .category_nav .category_nav_item {
   font-size: 28rpx;
-  width: 100%;
-  height: 77rpx;
-  line-height: 77rpx;
+  line-height: 40rpx;
+  text-align: center;
+  padding-top: 37rpx;
+}
+.category .category_main .category_nav .category_nav_item:nth-child(1) {
+  padding-top: 17rpx;
+}
+.category .category_main .category_list {
+  height: 100%;
+  width: calc(100vw - 182rpx);
+  float: right;
+}
+.category .category_main .category_list .category_list_item {
+  overflow: hidden;
+}
+.category .category_main .category_list .category_list_item .category_list_item_title {
+  font-size: 26rpx;
+  color: #575757;
+  text-align: center;
+  margin: 28rpx 0 21rpx 0;
+}
+.category .category_main .category_list .category_list_item .category_list_item_title:nth-child(1) {
+  margin-top: 18rpx;
+}
+.category .category_main .category_list .category_list_item .category_list_item_content {
+  width: 33.33%;
+  float: left;
   text-align: center;
 }
-.isSelect{
+.category .category_main .category_list .category_list_item .category_list_item_content .image_wrapper image {
+  height: 120rpx;
+  width: 120rpx;
+}
+.category .category_main .category_list .category_list_item .category_list_item_content .cat_name {
+  font-size: 21rpx;
+}
+.isSelect {
   color: var(--themeColor);
   border-left: 4rpx solid var(--themeColor);
   /* color: #ffffff; */
-}
-/* 左侧列表 */
-
-.category-list {
-  /* width: 568rpx; */
-}
-.category-list .category-list-title span{
-  font-size: 26rpx;
-}
-.category-list .category-list-title i{
-
 }

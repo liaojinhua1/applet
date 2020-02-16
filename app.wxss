@@ -1,6 +1,6 @@
 /**app.wxss**/
 /* 引入字体库 */
-/* @import ""; */
+@import "./styles/iconfont.wxss";
 /* 初始化整体样式 */
 page,view,text,image,navigator,swiper,swiper-item{
   margin: 0rpx;

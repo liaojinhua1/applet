@@ -1,29 +1,37 @@
 <!--pages/category/index.wxml-->
 <view class="category">
-  <view class="search">
-    <SearchInput/>
-  </view>
-  <view class="category-mian">
-    <view class="category-nav">
-      <scroll-view scroll-y='true' style="height:100%" scroll-with-animation="true" scroll-into-view="{{toView}}">
-        <block wx:for="{{categoryData}}" wx:key="index">
-          <view id="{{item.cat_id}}" class="scroll-view-item {{index === currentIndex ?'isSelect':''}}" data-index="{{index}}" bindtap="select">
-            {{item.cat_name}}
+  <!-- 分类页搜索框开始 -->
+  <SearchInput/>
+  <!-- 分类页搜索框结束 -->
+  <!-- 产品分类开始 -->
+  <view class="category_main">
+    <!-- 分类页左侧导航滚动条开始 -->
+    <scroll-view class="category_nav" scroll-y='true' scroll-with-animation="true">
+      <view wx:for="{{categoryData}}" wx:key="index" id="{{item.cat_id}}" class="category_nav_item {{index === selectIndex ?'isSelect':''}}" data-index="{{index}}" bindtap="handleItemClick">
+        {{item.cat_name}}
+      </view>
+    </scroll-view>
+    <!-- 分类页左侧导航滚动条结束 -->
+    <!-- 分类页右侧产品列表滚动页面开始 -->
+    <scroll-view class="category_list" scroll-y='true' scroll-with-animation="true"  scroll-top="{{scroll_top}}">
+      <view wx:for="{{categoryList}}" wx:key="index" class="category_list_item">
+        <!-- 标题开始 -->
+        <view class="category_list_item_title">
+          <text decode>/&nbsp;{{item.cat_name}}&nbsp;/           
+          </text>
+        </view>
+        <!-- 标题结束  -->
+        <!-- 图片列表开始 -->
+        <navigator class="category_list_item_content" url="/pages/goods_list/index?cid={{v.cat_id}}" wx:for="{{item.children}}" wx:for-item="v" wx:for-index="i" wx:key="i">
+          <view class="image_wrapper">
+            <image src="{{v.cat_icon}}"></image>
           </view>
-        </block>
-      </scroll-view>
-    </view>
-    <view class="category-list">
-      <scroll-view scroll-y='true' style="height:100%" scroll-with-animation="true" scroll-into-view="{{toView}}">
-        <block wx:for="{{categoryList}}" wx:key="index">
-          <view class="category-list-title">
-            <i></i>
-            <span>{{item.cat_name}}</span>
-            <i></i>
-          </view>
-        </block>
-      </scroll-view>
-    </view>
+          <view class="cat_name">{{v.cat_name}}</view>
+        </navigator>
+        <!-- 图片列表结束 -->
+      </view>
+    </scroll-view>
+    <!-- 分类页右侧产品列表滚动页面结束 -->
   </view>
-
+  <!-- 产品分类结束 -->
 </view>
